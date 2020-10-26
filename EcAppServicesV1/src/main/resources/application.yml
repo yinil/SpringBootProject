@@ -1,0 +1,26 @@
+
+spring:
+  application:
+    name: services-ec
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root123456
+    url: jdbc:mysql://localhost/v1?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+  jpa:
+    show-sql: true
+  data:
+    rest:
+      base-path: /api
+  jackson:
+    default-property-inclusion: non-null
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: httptrace
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka
